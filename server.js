@@ -4,7 +4,7 @@ var app       =     express();
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/',function(req,res){
-  res.sendfile("index.html");
+  res.sendFile("index.html");
 });
 
 app.post('/login',function(req,res){
