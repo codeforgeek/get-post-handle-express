@@ -1,27 +1,39 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Simple login</title>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script>
-      $(document).ready(function(){
-        var user,pass;
-        $("#submit").click(function(){
-          user=$("#user").val();
-          pass=$("#password").val();
-          $.post("http://localhost:3000/login",{user: user,password: pass}, function(data){
-            if(data==='done')
-              {
-                alert("login success");
-              }
-          });
-        });
+
+<head>
+  <title>Simple login</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    function login() {
+      const username = $("#ipUsername").val();
+      const password = $("#ipPassword").val();
+
+      $.post("http://localhost:3000/login", { username: username, password: password }, (data, status) => {
+
+        if (status === 'success')
+          alert(`Login success\n${data}`);
+        else
+          alert("Login denied");
+
       });
-    </script>
-  </head>
-  <body>
-    <h1>Hello people !</h1>
-    <input type="TEXT" id="user" size="40"><br>
-    <input type="password" id="password" size="40"><br>
-    <input type="button" id="submit" value="Submit">
-  </body>
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Sign in</h1>
+  <form onsubmit="login()">
+    <label for="ipUsername">Username:</label>
+    <input id="ipUsername" size="40" autocomplete="off">
+    <br>
+    <label for="ipPassword">Password:</label>
+    <input id="ipPassword" size="40" type="password">
+    <br>
+    <br>
+    <button type="submit">Login</button>
+  </form>
+
+</body>
+
 </html>
