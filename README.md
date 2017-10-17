@@ -1,12 +1,14 @@
-get-post-handle-express
-=======================
+# POST Request in Expressjs 4
 
-Handle POST Request in Express 4
+Download code and run
 
-Download code and run <code>node server.js</code>
+```
+npm install
+```
+```
+node server.js
+```
 
-Vist <code>http://localhost:3000</code> to view the app.
+Visit ```http://localhost:3000``` to view the app.
 
-Watch the demo here : 
-
-[View the Youtube Demo](https://www.youtube.com/watch?v=C3G3N4LMJeE)
+Watch the demo [here](https://www.youtube.com/watch?v=C3G3N4LMJeE)
